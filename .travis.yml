@@ -1,0 +1,16 @@
+before_install:
+  - echo extension = mongodb.so >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+install:
+  - composer install --dev
+before_script:
+  - mongo test --eval "db.createUser({ user:'liquidbox', pwd:'liquidbox', roles:[ 'readWrite' ] }); db.createUser({ user:'ro_user', pwd:'p%:@/?=&', roles:[ 'read' ] });"
+script:
+  - vendor/bin/php-cs-fixer --diff --dry-run --verbose fix
+  - vendor/bin/phpunit
+services:
+  - mongodb
+language: php
+php:
+  - '5.6'
+  - '7.0'
+  - '7.1'

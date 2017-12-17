@@ -1,0 +1,39 @@
+{
+    "name": "liquidbox/silex-mongodb",
+    "description": "A MongoDB service provider for the Silex micro-framework",
+    "keywords": [
+        "silex",
+        "service",
+        "provider",
+        "mongodb",
+        "mongo",
+        "database",
+        "php"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan-Paul Marois",
+            "email": "jonathanpaul.marois@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "silex/silex": "^2.0",
+        "mongodb/mongodb": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpunit/phpunit": "^4.0|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LiquidBox\\": "src/LiquidBox"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LiquidBox\\Tests\\": "tests/LiquidBox/Tests"
+        }
+    }
+}
